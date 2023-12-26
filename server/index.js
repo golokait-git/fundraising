@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose';
 dotenv.config()
 import {postapisignup,postapilogin} from './controllers/user.controller.js'
+import {postDonarApi,getApiDonars } from './controllers/donar.controller.js'
 
 const app = express();
 app.use(express.json())
@@ -20,6 +21,9 @@ const mongoDb = ()=>{
 
 app.post('/api/v1/signups', postapisignup)
 app.post('/api/v1/logins', postapilogin)
+
+app.post('/api/v1/donars', postDonarApi )
+app.get('/api/v1/donars',getApiDonars)
 
 
 

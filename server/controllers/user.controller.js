@@ -21,8 +21,6 @@ const postapisignup = async (req, res) => {
     try {
         const savedUser = await newUser.save()
 
-        
-
         return res.status(201).json({
             success: true,
             data: savedUser,
@@ -32,7 +30,7 @@ const postapisignup = async (req, res) => {
 
     } catch (e) {
         return res.json({
-            success: true,
+            success: false,
             message: (e.message)
         })
     }

@@ -22,7 +22,7 @@ const userSchema = new Schema({
     },
     mobileNo:{
         type:String,
-        required:[true,"please provide  mobile Number"]
+        required:[true,"please  provide  mobile Number"]
     },
   isAdmin:{
     type:String,
