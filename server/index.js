@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
 dotenv.config()
+import {postapisignup,postapilogin} from './controllers/user.controller.js'
 
 const app = express();
 app.use(express.json())
@@ -16,6 +17,9 @@ const mongoDb = ()=>{
         console.log("mongodb connection")
     }
 }
+
+app.post('/api/v1/signups', postapisignup)
+app.post('/api/v1/logins', postapilogin)
 
 
 
