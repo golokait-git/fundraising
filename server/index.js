@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 dotenv.config()
 import {postapisignup,postapilogin} from './controllers/user.controller.js'
 import {postDonarApi,getApiDonars } from './controllers/donar.controller.js'
+import {postApiEmagzine} from './controllers/e-magzine.controller.js'
 
 const app = express();
 app.use(express.json())
@@ -25,6 +26,8 @@ app.post('/api/v1/logins', postapilogin)
 app.post('/api/v1/donars', postDonarApi )
 app.get('/api/v1/donars',getApiDonars)
 
+app.post('/api/v1/emagzines',postApiEmagzine)
+// app.get('/api/v1/emagzines',getApiEmagzine)
 
 
 app.listen(PORT, ()=>{
